@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="HomePageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variableUsage DataControl="AppModule_AMDataControl1" Binds="UserInfo_ViewObj1.variablesMap.user_email"
+                     Name="ExecuteWithParams_user_email" IsQueriable="false"/>
+      <variableUsage DataControl="AppModule_AMDataControl1" Binds="UserInfo_ViewObj1.variablesMap.user_pass"
+                     Name="ExecuteWithParams_user_pass" IsQueriable="false"/>
+    </variableIterator>
+    <iterator Binds="UserInfo_ViewObj1" RangeSize="25" DataControl="AppModule_AMDataControl"
+              id="UserInfo_ViewObj1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="UserInfo_ViewObj1Iterator" id="ExecuteWithParams" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="user_email" NDType="java.lang.String" NDValue="${bindings.ExecuteWithParams_user_email}"/>
+      <NamedData NDName="user_pass" NDType="java.lang.String" NDValue="${bindings.ExecuteWithParams_user_pass}"/>
+    </action>
+    <attributeValues IterBinding="variables" id="user_email">
+      <AttrNames>
+        <Item Value="ExecuteWithParams_user_email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="user_pass">
+      <AttrNames>
+        <Item Value="ExecuteWithParams_user_pass"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UserInfo_ViewObj1Iterator" id="UserId">
+      <AttrNames>
+        <Item Value="UserId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UserInfo_ViewObj1Iterator" id="UserFname">
+      <AttrNames>
+        <Item Value="UserFname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UserInfo_ViewObj1Iterator" id="UserLname">
+      <AttrNames>
+        <Item Value="UserLname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UserInfo_ViewObj1Iterator" id="UserNationalty">
+      <AttrNames>
+        <Item Value="UserNationalty"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UserInfo_ViewObj1Iterator" id="UserPhone">
+      <AttrNames>
+        <Item Value="UserPhone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UserInfo_ViewObj1Iterator" id="UserEmail">
+      <AttrNames>
+        <Item Value="UserEmail"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UserInfo_ViewObj1Iterator" id="UserPassword">
+      <AttrNames>
+        <Item Value="UserPassword"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UserInfo_ViewObj1Iterator" id="TownId">
+      <AttrNames>
+        <Item Value="TownId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UserInfo_ViewObj1Iterator" id="GenderId">
+      <AttrNames>
+        <Item Value="GenderId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UserInfo_ViewObj1Iterator" id="EducationLevelId">
+      <AttrNames>
+        <Item Value="EducationLevelId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UserInfo_ViewObj1Iterator" id="MilitaryServiceId">
+      <AttrNames>
+        <Item Value="MilitaryServiceId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UserInfo_ViewObj1Iterator" id="Birhdate">
+      <AttrNames>
+        <Item Value="Birhdate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UserInfo_ViewObj1Iterator" id="SpecialtiesId">
+      <AttrNames>
+        <Item Value="SpecialtiesId"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

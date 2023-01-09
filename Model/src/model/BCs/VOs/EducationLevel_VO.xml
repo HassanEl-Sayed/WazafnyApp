@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EducationLevel_VO"
+  Version="11.1.2.64.36"
+  SelectList="EducationLevel_EO.EDUCATION_LEVEL_ID, 
+       EducationLevel_EO.EDUCATION_LEVEL_NAME"
+  FromList="EDUCATION_LEVEL EducationLevel_EO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="EducationLevel_EO"
+    Entity="model.BCs.EOs.EducationLevel_EO"/>
+  <ViewAttribute
+    Name="EducationLevelId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EducationLevelId"
+    EntityUsage="EducationLevel_EO"
+    AliasName="EDUCATION_LEVEL_ID"/>
+  <ViewAttribute
+    Name="EducationLevelName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EducationLevelName"
+    EntityUsage="EducationLevel_EO"
+    AliasName="EDUCATION_LEVEL_NAME"/>
+  <ViewLinkAccessor
+    Name="Availablejobs"
+    ViewLink="model.BCs.VLs.AvailablejobsFk6_VL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="HighEducation"
+    ViewLink="model.BCs.VLs.HighEducationFk2_VL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="Speclization"
+    ViewLink="model.BCs.VLs.SpeclizationFk1_VL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="Users"
+    ViewLink="model.BCs.VLs.UsersFk3_VL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

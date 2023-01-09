@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Users2_VO"
+  Version="11.1.2.64.36"
+  SelectList="Users2_EO.USER_ID, 
+       Users2_EO.USER_FNAME, 
+       Users2_EO.USER_LNAME, 
+       Users2_EO.USER_NATIONALTY, 
+       Users2_EO.USER_PHONE, 
+       Users2_EO.USER_EMAIL, 
+       Users2_EO.USER_PASSWORD, 
+       Users2_EO.TOWN_ID, 
+       Users2_EO.GENDER_ID, 
+       Users2_EO.EDUCATION_LEVEL_ID, 
+       Users2_EO.MILITARY_SERVICE_ID, 
+       Users2_EO.BIRHDATE, 
+       Users2_EO.SPECIALTIES_ID"
+  FromList="USERS Users2_EO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <ViewAccessor
+    Name="Specialties_VO1"
+    ViewObjectName="model.BCs.VOs.Specialties_VO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Town_VO1"
+    ViewObjectName="model.BCs.VOs.Town_VO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Gender_VO1"
+    ViewObjectName="model.BCs.VOs.Gender_VO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="EducationLevel_VO1"
+    ViewObjectName="model.BCs.VOs.EducationLevel_VO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="MilitaryService_VO1"
+    ViewObjectName="model.BCs.VOs.MilitaryService_VO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_SpecialtiesId"
+    ListVOName="Specialties_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0"
+    ComboRowCountHint="10">
+    <AttrArray Name="AttrNames">
+      <Item Value="SpecialtiesId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="SpecialtiesId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="SpecialtiesName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_TownId"
+    ListVOName="Town_VO1"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TownId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TownId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TownName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_GenderId"
+    ListVOName="Gender_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GenderId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GenderId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GenderName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_EducationLevelId"
+    ListVOName="EducationLevel_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="EducationLevelId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="EducationLevelId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="EducationLevelName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_MilitaryServiceId"
+    ListVOName="MilitaryService_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="MilitaryServiceId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="MilitaryServiceId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="MilitaryServiceState"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="Users2_EO"
+    Entity="model.BCs.EOs.Users2_EO"/>
+  <ViewAttribute
+    Name="UserId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UserId"
+    EntityUsage="Users2_EO"
+    AliasName="USER_ID"/>
+  <ViewAttribute
+    Name="UserFname"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UserFname"
+    EntityUsage="Users2_EO"
+    AliasName="USER_FNAME"/>
+  <ViewAttribute
+    Name="UserLname"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UserLname"
+    EntityUsage="Users2_EO"
+    AliasName="USER_LNAME"/>
+  <ViewAttribute
+    Name="UserNationalty"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UserNationalty"
+    EntityUsage="Users2_EO"
+    AliasName="USER_NATIONALTY"/>
+  <ViewAttribute
+    Name="UserPhone"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UserPhone"
+    EntityUsage="Users2_EO"
+    AliasName="USER_PHONE"/>
+  <ViewAttribute
+    Name="UserEmail"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UserEmail"
+    EntityUsage="Users2_EO"
+    AliasName="USER_EMAIL"/>
+  <ViewAttribute
+    Name="UserPassword"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UserPassword"
+    EntityUsage="Users2_EO"
+    AliasName="USER_PASSWORD"/>
+  <ViewAttribute
+    Name="TownId"
+    PrecisionRule="true"
+    EntityAttrName="TownId"
+    EntityUsage="Users2_EO"
+    AliasName="TOWN_ID"
+    LOVName="LOV_TownId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="GenderId"
+    PrecisionRule="true"
+    EntityAttrName="GenderId"
+    EntityUsage="Users2_EO"
+    AliasName="GENDER_ID"
+    LOVName="LOV_GenderId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EducationLevelId"
+    PrecisionRule="true"
+    EntityAttrName="EducationLevelId"
+    EntityUsage="Users2_EO"
+    AliasName="EDUCATION_LEVEL_ID"
+    LOVName="LOV_EducationLevelId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MilitaryServiceId"
+    PrecisionRule="true"
+    EntityAttrName="MilitaryServiceId"
+    EntityUsage="Users2_EO"
+    AliasName="MILITARY_SERVICE_ID"
+    LOVName="LOV_MilitaryServiceId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Birhdate"
+    PrecisionRule="true"
+    EntityAttrName="Birhdate"
+    EntityUsage="Users2_EO"
+    AliasName="BIRHDATE"/>
+  <ViewAttribute
+    Name="SpecialtiesId"
+    PrecisionRule="true"
+    EntityAttrName="SpecialtiesId"
+    EntityUsage="Users2_EO"
+    AliasName="SPECIALTIES_ID"
+    LOVName="LOV_SpecialtiesId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+</ViewObject>

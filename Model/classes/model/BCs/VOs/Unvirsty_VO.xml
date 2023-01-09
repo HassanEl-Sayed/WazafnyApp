@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Unvirsty_VO"
+  Version="11.1.2.64.36"
+  SelectList="Unvirsty_EO.UNVIRSTY_ID, 
+       Unvirsty_EO.UNVIRSTY_NAME"
+  FromList="UNVIRSTY Unvirsty_EO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="Unvirsty_EO"
+    Entity="model.BCs.EOs.Unvirsty_EO"/>
+  <ViewAttribute
+    Name="UnvirstyId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UnvirstyId"
+    EntityUsage="Unvirsty_EO"
+    AliasName="UNVIRSTY_ID"/>
+  <ViewAttribute
+    Name="UnvirstyName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UnvirstyName"
+    EntityUsage="Unvirsty_EO"
+    AliasName="UNVIRSTY_NAME"/>
+  <ViewLinkAccessor
+    Name="CollageUnvirsty"
+    ViewLink="model.BCs.VLs.CollageUnvirstyFk2_VL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

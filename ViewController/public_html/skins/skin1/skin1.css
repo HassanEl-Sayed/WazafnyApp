@@ -1,0 +1,145 @@
+/**ADFFaces_Skin_File / DO NOT REMOVE**/
+@namespace af "http://xmlns.oracle.com/adf/faces/rich";
+@namespace dvt "http://xmlns.oracle.com/dss/adf/faces";
+
+.f1{
+font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+font-size: 80px;
+letter-spacing: 0.8px;
+word-spacing: -1.8px;
+color: rgb(255,33,33);
+font-weight: 800;
+text-decoration: none;
+font-style: normal;
+font-variant: small-caps;
+text-transform: capitalize;
+}
+.f2{
+font-family: "Comic Sans MS", cursive, sans-serif;
+font-size: 26px;
+letter-spacing: 0px;
+word-spacing: 2px;
+color: #F6C73E;
+font-weight: 700;
+text-decoration: none;
+font-style: normal;
+font-variant: small-caps;
+text-transform: capitalize;
+}
+
+.lableSign af|inputText::label{
+font-family: "Arial Black", Gadget, sans-serif;
+font-size: 28px;
+letter-spacing: 0.4px;
+word-spacing: 0.8px;
+color: #2CE1FF;
+font-weight: 700;
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+}
+.lableSign2 af|inputText::label{
+font-family: Georgia, serif;
+font-size: 26px;
+letter-spacing: 0px;
+word-spacing: 2px;
+color: #EC273F;
+font-weight: 700;
+text-decoration: none;
+font-style: normal;
+font-variant: small-caps;
+text-transform: capitalize;
+}
+
+
+.lov af|selectOneChoice::label{font-family: "Arial Black", Gadget, sans-serif;
+font-size: 28px;
+letter-spacing: 0.4px;
+word-spacing: 0.8px;
+color: #2CE1FF;
+font-weight: 700;
+
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+}
+
+.fancyArrowNext
+{
+ background :  rgb(255,77,225) !important;
+	background-color:#7892c2;
+	border-radius:10px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:19px;
+	padding:12px 37px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+
+}
+
+.fancyArrowNext:after
+{
+    content: ' ';
+    height: 0px;
+    width: 0px;
+    border: 10px solid   rgb(82,82,82)    ;
+    top: -1px;
+    left: 85%;
+    position: absolute;
+    border-left-color: transparent ;
+    border-top-right-radius: 5px 5px;
+    border-bottom-right-radius: 5px 5px;
+}
+.ck af|selectManyCheckbox::label{
+font-family: "Arial Black", Gadget, sans-serif;
+font-size: 28px;
+letter-spacing: 0.4px;
+word-spacing: 0.8px;
+color: #2CE1FF;
+font-weight: 700;
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+}
+.list af|inputListOfValues::label{
+font-family: "Arial Black", Gadget, sans-serif;
+font-size: 28px;
+letter-spacing: 0.4px;
+word-spacing: 0.8px;
+color: #2CE1FF;
+font-weight: 700;
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+}
+.list2 af|inputListOfValues::label{
+font-family: Georgia, serif;
+font-size: 26px;
+letter-spacing: 0px;
+word-spacing: 2px;
+color: #EC273F;
+font-weight: 700;
+text-decoration: none;
+font-style: normal;
+font-variant: small-caps;
+text-transform: capitalize;
+}
+.date af|inputDate::label{
+font-family: "Arial Black", Gadget, sans-serif;
+font-size: 28px;
+letter-spacing: 0.4px;
+word-spacing: 0.8px;
+color: #2CE1FF;
+font-weight: 700;
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+}
+.bor1{
+border: 7px solid #1C6EA4;
+border-radius: 40px;
+}

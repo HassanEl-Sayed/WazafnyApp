@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ExpInfo_VO"
+  Version="11.1.2.64.36"
+  SelectList="ExpInfo_EO.EXP_INFO_ID, 
+       ExpInfo_EO.EXP_INFO_JOBTITLE, 
+       ExpInfo_EO.EXP_INFO_COMPANY_NAME, 
+       ExpInfo_EO.EXP_INFO_WORKTIME, 
+       ExpInfo_EO.EXP_INFO_LEAVEWORK, 
+       ExpInfo_EO.JOP_ID, 
+       ExpInfo_EO.USER_PROFILE_ID"
+  FromList="EXP_INFO ExpInfo_EO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="ExpInfo_EO"
+    Entity="model.BCs.EOs.ExpInfo_EO"/>
+  <ViewAttribute
+    Name="ExpInfoId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ExpInfoId"
+    EntityUsage="ExpInfo_EO"
+    AliasName="EXP_INFO_ID"/>
+  <ViewAttribute
+    Name="ExpInfoJobtitle"
+    PrecisionRule="true"
+    EntityAttrName="ExpInfoJobtitle"
+    EntityUsage="ExpInfo_EO"
+    AliasName="EXP_INFO_JOBTITLE"/>
+  <ViewAttribute
+    Name="ExpInfoCompanyName"
+    PrecisionRule="true"
+    EntityAttrName="ExpInfoCompanyName"
+    EntityUsage="ExpInfo_EO"
+    AliasName="EXP_INFO_COMPANY_NAME"/>
+  <ViewAttribute
+    Name="ExpInfoWorktime"
+    PrecisionRule="true"
+    EntityAttrName="ExpInfoWorktime"
+    EntityUsage="ExpInfo_EO"
+    AliasName="EXP_INFO_WORKTIME"/>
+  <ViewAttribute
+    Name="ExpInfoLeavework"
+    PrecisionRule="true"
+    EntityAttrName="ExpInfoLeavework"
+    EntityUsage="ExpInfo_EO"
+    AliasName="EXP_INFO_LEAVEWORK"/>
+  <ViewAttribute
+    Name="JopId"
+    PrecisionRule="true"
+    EntityAttrName="JopId"
+    EntityUsage="ExpInfo_EO"
+    AliasName="JOP_ID"/>
+  <ViewAttribute
+    Name="UserProfileId"
+    PrecisionRule="true"
+    EntityAttrName="UserProfileId"
+    EntityUsage="ExpInfo_EO"
+    AliasName="USER_PROFILE_ID"/>
+</ViewObject>

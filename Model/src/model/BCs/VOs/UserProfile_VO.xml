@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="UserProfile_VO"
+  Version="11.1.2.64.36"
+  SelectList="UserProfile_EO.USER_PROFILE_ID, 
+       UserProfile_EO.USER_PROFILE_GRADUATIONYEAR, 
+       UserProfile_EO.USER_PROFILE_EXP, 
+       UserProfile_EO.USER_PROFILE_DRIVINGLICENSE, 
+       UserProfile_EO.USER_PROFILE_IMAGE, 
+       UserProfile_EO.USER_PROFILE_CV, 
+       UserProfile_EO.USER_PROFILE_TRAINING, 
+       UserProfile_EO.DRIVING_ID, 
+       UserProfile_EO.USER_ID"
+  FromList="USER_PROFILE UserProfile_EO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <ViewAccessor
+    Name="Driving_VO1"
+    ViewObjectName="model.BCs.VOs.Driving_VO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Users_VO1"
+    ViewObjectName="model.BCs.VOs.Users_VO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_UserId"
+    ListVOName="Users_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="UserId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="UserId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="UserFname"/>
+      <Item Value="UserLname"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DrivingId"
+    ListVOName="Driving_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DrivingId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DrivingId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="DrivingType"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="UserProfile_EO"
+    Entity="model.BCs.EOs.UserProfile_EO"/>
+  <ViewAttribute
+    Name="UserProfileId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UserProfileId"
+    EntityUsage="UserProfile_EO"
+    AliasName="USER_PROFILE_ID"/>
+  <ViewAttribute
+    Name="UserProfileGraduationyear"
+    PrecisionRule="true"
+    EntityAttrName="UserProfileGraduationyear"
+    EntityUsage="UserProfile_EO"
+    AliasName="USER_PROFILE_GRADUATIONYEAR"/>
+  <ViewAttribute
+    Name="UserProfileExp"
+    PrecisionRule="true"
+    EntityAttrName="UserProfileExp"
+    EntityUsage="UserProfile_EO"
+    AliasName="USER_PROFILE_EXP"/>
+  <ViewAttribute
+    Name="UserProfileDrivinglicense"
+    PrecisionRule="true"
+    EntityAttrName="UserProfileDrivinglicense"
+    EntityUsage="UserProfile_EO"
+    AliasName="USER_PROFILE_DRIVINGLICENSE"/>
+  <ViewAttribute
+    Name="UserProfileImage"
+    IsQueriable="false"
+    PrecisionRule="true"
+    EntityAttrName="UserProfileImage"
+    EntityUsage="UserProfile_EO"
+    AliasName="USER_PROFILE_IMAGE"/>
+  <ViewAttribute
+    Name="UserProfileCv"
+    IsQueriable="false"
+    PrecisionRule="true"
+    EntityAttrName="UserProfileCv"
+    EntityUsage="UserProfile_EO"
+    AliasName="USER_PROFILE_CV"/>
+  <ViewAttribute
+    Name="UserProfileTraining"
+    PrecisionRule="true"
+    EntityAttrName="UserProfileTraining"
+    EntityUsage="UserProfile_EO"
+    AliasName="USER_PROFILE_TRAINING"/>
+  <ViewAttribute
+    Name="DrivingId"
+    PrecisionRule="true"
+    EntityAttrName="DrivingId"
+    EntityUsage="UserProfile_EO"
+    AliasName="DRIVING_ID"
+    LOVName="LOV_DrivingId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UserId"
+    PrecisionRule="true"
+    EntityAttrName="UserId"
+    EntityUsage="UserProfile_EO"
+    AliasName="USER_ID"
+    LOVName="LOV_UserId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewLinkAccessor
+    Name="SkillProfile"
+    ViewLink="model.BCs.VLs.SkillProfileFk2_VL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AvailjProfile"
+    ViewLink="model.BCs.VLs.AvailjProfileFk1_VL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="JobProfile"
+    ViewLink="model.BCs.VLs.JobProfileFk1_VL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="ExpInfo"
+    ViewLink="model.BCs.VLs.ExpInfoFk2_VL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CollageUnvirsty_VO"
+  Version="11.1.2.64.36"
+  SelectList="CollageUnvirsty_EO.COLLAGE_ID, 
+       CollageUnvirsty_EO.UNVIRSTY_ID"
+  FromList="COLLAGE_UNVIRSTY CollageUnvirsty_EO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <ViewAccessor
+    Name="Unvirsty_VO1"
+    ViewObjectName="model.BCs.VOs.Unvirsty_VO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Collage_VO1"
+    ViewObjectName="model.BCs.VOs.Collage_VO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_UnvirstyId"
+    ListVOName="Unvirsty_VO1"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="UnvirstyId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="UnvirstyId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="UnvirstyName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CollageId"
+    ListVOName="Collage_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CollageId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CollageId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="CollageName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="CollageUnvirsty_EO"
+    Entity="model.BCs.EOs.CollageUnvirsty_EO"/>
+  <ViewAttribute
+    Name="CollageId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CollageId"
+    EntityUsage="CollageUnvirsty_EO"
+    AliasName="COLLAGE_ID"
+    LOVName="LOV_CollageId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UnvirstyId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UnvirstyId"
+    EntityUsage="CollageUnvirsty_EO"
+    AliasName="UNVIRSTY_ID"
+    LOVName="LOV_UnvirstyId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+</ViewObject>

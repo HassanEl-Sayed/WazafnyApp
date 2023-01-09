@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Specialties_VO"
+  Version="11.1.2.64.36"
+  SelectList="Specialties_EO.SPECIALTIES_ID, 
+       Specialties_EO.SPECIALTIES_NAME, 
+       Specialties_EO.COLLAGE_ID"
+  FromList="SPECIALTIES Specialties_EO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <ViewAccessor
+    Name="Collage_VO1"
+    ViewObjectName="model.BCs.VOs.Collage_VO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="CollageUnvirsty_VO1"
+    ViewObjectName="model.BCs.VOs.CollageUnvirsty_VO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_CollageId"
+    ListVOName="CollageUnvirsty_VO1"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CollageId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CollageId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="CollageId"/>
+      <Item Value="UnvirstyId"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="Specialties_EO"
+    Entity="model.BCs.EOs.Specialties_EO"/>
+  <ViewAttribute
+    Name="SpecialtiesId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="SpecialtiesId"
+    EntityUsage="Specialties_EO"
+    AliasName="SPECIALTIES_ID"/>
+  <ViewAttribute
+    Name="SpecialtiesName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="SpecialtiesName"
+    EntityUsage="Specialties_EO"
+    AliasName="SPECIALTIES_NAME"/>
+  <ViewAttribute
+    Name="CollageId"
+    PrecisionRule="true"
+    EntityAttrName="CollageId"
+    EntityUsage="Specialties_EO"
+    AliasName="COLLAGE_ID"
+    LOVName="LOV_CollageId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+</ViewObject>

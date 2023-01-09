@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TownFk1_VL"
+  Version="11.1.2.64.36"
+  EntityAssociation="model.BCs.ASSs.TownFk1_ASS">
+  <ViewLinkDefEnd
+    Name="Cities"
+    Cardinality="1"
+    Source="true"
+    Owner="model.BCs.VOs.Cities_VO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="Cities"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.BCs.VOs.Cities_VO.CityId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="Town"
+    Cardinality="-1"
+    Owner="model.BCs.VOs.Town_VO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="Town"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.BCs.VOs.Town_VO.CityId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

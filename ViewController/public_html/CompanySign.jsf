@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:cc="http://java.sun.com/jsf/composite">
+    <af:document title="UserSign.jsf" id="d1" inlineStyle='background-image:url("01_DSC8736_crop-1800x1072.jpg");'
+                 binding="#{backingBeanScope.Script1.d1}">
+        <af:messages id="m1" binding="#{backingBeanScope.Script1.m1}"/>
+        <af:form id="f1" binding="#{backingBeanScope.Script1.f1}">
+            <af:panelStretchLayout id="psl1" inlineStyle="width:1491px; height:889px;"
+                                   binding="#{backingBeanScope.Script1.psl1}">
+                <f:facet name="center">
+                    <!-- id="af_one_column_stretched"   -->
+                    <af:panelGridLayout id="pgl1" binding="#{backingBeanScope.Script1.pgl1}">
+                        <af:gridRow marginTop="5px" height="auto" id="gr1" binding="#{backingBeanScope.Script1.gr1}">
+                            <af:gridCell marginStart="5px" width="34%" id="gc1"
+                                         binding="#{backingBeanScope.Script1.gc1}"/>
+                            <af:gridCell marginStart="1px" width="33%" id="gc2"
+                                         binding="#{backingBeanScope.Script1.gc2}" inlineStyle="text-align:right;">
+                                <af:outputText value="Sign to find Employees" id="ot1"
+                                               inlineStyle="font-size:40px; text-align:right;" styleClass="f2"
+                                               binding="#{backingBeanScope.Script1.ot1}"/>
+                            </af:gridCell>
+                            <af:gridCell marginStart="1px" marginEnd="5px" width="33%" id="gc3"
+                                         binding="#{backingBeanScope.Script1.gc3}"/>
+                        </af:gridRow>
+                        <af:gridRow marginTop="1px" height="auto" id="gr2" binding="#{backingBeanScope.Script1.gr2}">
+                            <af:gridCell marginStart="5px" width="34%" id="gc4"
+                                         binding="#{backingBeanScope.Script1.gc4}"/>
+                            <af:gridCell marginStart="1px" width="33%" id="gc5"
+                                         binding="#{backingBeanScope.Script1.gc5}">
+                                <af:panelFormLayout id="pfl1" binding="#{backingBeanScope.Script1.pfl1}">
+                                    <af:inputText value="#{bindings.CompName.inputValue}" label="Company Name"
+                                                  required="#{bindings.CompName.hints.mandatory}"
+                                                  columns="#{bindings.CompName.hints.displayWidth}"
+                                                  maximumLength="#{bindings.CompName.hints.precision}"
+                                                  shortDesc="#{bindings.CompName.hints.tooltip}" id="it1"
+                                                  binding="#{backingBeanScope.Script1.it1}" styleClass="lableSign2"
+                                                  contentStyle="width:170px;height:25px">
+                                        <f:validator binding="#{bindings.CompName.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.CompPhone.inputValue}" label="phone"
+                                                  required="#{bindings.CompPhone.hints.mandatory}"
+                                                  columns="#{bindings.CompPhone.hints.displayWidth}"
+                                                  maximumLength="#{bindings.CompPhone.hints.precision}"
+                                                  shortDesc="#{bindings.CompPhone.hints.tooltip}" id="it2"
+                                                  binding="#{backingBeanScope.Script1.it2}" styleClass="lableSign2"
+                                                  contentStyle="width:170px;height:25px">
+                                        <f:validator binding="#{bindings.CompPhone.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.CompLinkweb.inputValue}" label="Company Website"
+                                                  required="#{bindings.CompLinkweb.hints.mandatory}"
+                                                  columns="#{bindings.CompLinkweb.hints.displayWidth}"
+                                                  maximumLength="#{bindings.CompLinkweb.hints.precision}"
+                                                  shortDesc="#{bindings.CompLinkweb.hints.tooltip}" id="it3"
+                                                  binding="#{backingBeanScope.Script1.it3}" styleClass="lableSign2"
+                                                  contentStyle="width:170px;height:25px">
+                                        <f:validator binding="#{bindings.CompLinkweb.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.CeoFname.inputValue}" label="Ceo First name"
+                                                  required="#{bindings.CeoFname.hints.mandatory}"
+                                                  columns="#{bindings.CeoFname.hints.displayWidth}"
+                                                  maximumLength="#{bindings.CeoFname.hints.precision}"
+                                                  shortDesc="#{bindings.CeoFname.hints.tooltip}" id="it4"
+                                                  binding="#{backingBeanScope.Script1.it4}" styleClass="lableSign2"
+                                                  contentStyle="width:170px;height:25px">
+                                        <f:validator binding="#{bindings.CeoFname.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.CeoLname.inputValue}" label="Ceo Last name"
+                                                  required="#{bindings.CeoLname.hints.mandatory}"
+                                                  columns="#{bindings.CeoLname.hints.displayWidth}"
+                                                  maximumLength="#{bindings.CeoLname.hints.precision}"
+                                                  shortDesc="#{bindings.CeoLname.hints.tooltip}" id="it5"
+                                                  binding="#{backingBeanScope.Script1.it5}" styleClass="lableSign2"
+                                                  contentStyle="width:170px;height:25px">
+                                        <f:validator binding="#{bindings.CeoLname.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.CompNoOfEmp.inputValue}" label="Number of Employees"
+                                                  required="#{bindings.CompNoOfEmp.hints.mandatory}"
+                                                  columns="#{bindings.CompNoOfEmp.hints.displayWidth}"
+                                                  maximumLength="#{bindings.CompNoOfEmp.hints.precision}"
+                                                  shortDesc="#{bindings.CompNoOfEmp.hints.tooltip}" id="it6"
+                                                  binding="#{backingBeanScope.Script1.it6}" styleClass="lableSign2"
+                                                  contentStyle="width:170px;height:25px">
+                                        <f:validator binding="#{bindings.CompNoOfEmp.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.CompEmail.inputValue}" label="Email"
+                                                  required="#{bindings.CompEmail.hints.mandatory}"
+                                                  columns="#{bindings.CompEmail.hints.displayWidth}"
+                                                  maximumLength="#{bindings.CompEmail.hints.precision}"
+                                                  shortDesc="#{bindings.CompEmail.hints.tooltip}" id="it7"
+                                                  binding="#{backingBeanScope.Script1.it7}" styleClass="lableSign2"
+                                                  contentStyle="width:170px;height:25px">
+                                        <f:validator binding="#{bindings.CompEmail.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.CompPassword.inputValue}" label="Password"
+                                                  required="#{bindings.CompPassword.hints.mandatory}"
+                                                  columns="#{bindings.CompPassword.hints.displayWidth}"
+                                                  maximumLength="#{bindings.CompPassword.hints.precision}"
+                                                  shortDesc="#{bindings.CompPassword.hints.tooltip}" id="it8"
+                                                  binding="#{backingBeanScope.Script1.it8}" styleClass="lableSign2"
+                                                  contentStyle="width:170px;height:25px">
+                                        <f:validator binding="#{bindings.CompPassword.validator}"/>
+                                    </af:inputText>
+                                    <af:inputFile value="#{bindings.CompLogo.inputValue}" label="Logo"
+                                                  required="#{bindings.CompLogo.hints.mandatory}"
+                                                  columns="#{bindings.CompLogo.hints.displayWidth}"
+                                                  shortDesc="#{bindings.CompLogo.hints.tooltip}" id="it9"
+                                                  binding="#{backingBeanScope.Script1.it9}" styleClass="lableSign2"
+                                                  contentStyle="width:170px;height:25px">
+                                        <f:validator binding="#{bindings.CompLogo.validator}"/>
+                                    </af:inputFile>
+                                    <af:inputListOfValues id="townIdId"
+                                                          popupTitle="Search and Select: #{bindings.TownId.hints.label}"
+                                                          value="#{bindings.TownId.inputValue}"
+                                                          label="#{bindings.TownId.hints.label}"
+                                                          model="#{bindings.TownId.listOfValuesModel}"
+                                                          required="#{bindings.TownId.hints.mandatory}"
+                                                          columns="#{bindings.TownId.hints.displayWidth}"
+                                                          shortDesc="#{bindings.TownId.hints.tooltip}"
+                                                          binding="#{backingBeanScope.Script1.townIdId}"
+                                                          styleClass="list2">
+                                        <f:validator binding="#{bindings.TownId.validator}"/>
+                                        <af:convertNumber groupingUsed="false" pattern="#{bindings.TownId.format}"/>
+                                    </af:inputListOfValues>
+                                    <af:panelGroupLayout id="pgl2" binding="#{backingBeanScope.Script1.pgl2}"
+                                                         inlineStyle="margin:0%;">
+                                        <af:commandButton actionListener="#{bindings.Commit.execute}" text="Save"
+                                                          disabled="#{!bindings.Commit.enabled}" id="cb1"
+                                                          binding="#{backingBeanScope.Script1.cb1}"
+                                                          styleClass="fancyArrowNext"/>
+                                        <af:commandButton text="Login" id="cb2"
+                                                          binding="#{backingBeanScope.Script1.cb2}"
+                                                          styleClass="fancyArrowNext"/>
+                                        <af:commandButton text="Home" id="cb3" binding="#{backingBeanScope.Script1.cb3}"
+                                                          styleClass="fancyArrowNext" action="toHome"/>
+                                    </af:panelGroupLayout>
+                                </af:panelFormLayout>
+                            </af:gridCell>
+                            <af:gridCell marginStart="1px" marginEnd="5px" width="33%" id="gc6"
+                                         binding="#{backingBeanScope.Script1.gc6}"/>
+                        </af:gridRow>
+                        <af:gridRow marginTop="1px" marginBottom="5px" height="auto" id="gr3"
+                                    binding="#{backingBeanScope.Script1.gr3}">
+                            <af:gridCell marginStart="5px" width="34%" id="gc7"
+                                         binding="#{backingBeanScope.Script1.gc7}"/>
+                            <af:gridCell marginStart="1px" width="33%" id="gc8"
+                                         binding="#{backingBeanScope.Script1.gc8}"/>
+                            <af:gridCell marginStart="1px" marginEnd="5px" width="33%" id="gc9"
+                                         binding="#{backingBeanScope.Script1.gc9}"/>
+                        </af:gridRow>
+                    </af:panelGridLayout>
+                </f:facet>
+            </af:panelStretchLayout>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:Script1-->
+</f:view>

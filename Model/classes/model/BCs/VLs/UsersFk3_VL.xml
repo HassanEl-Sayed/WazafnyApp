@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="UsersFk3_VL"
+  Version="11.1.2.64.36"
+  EntityAssociation="model.BCs.ASSs.UsersFk3_ASS">
+  <ViewLinkDefEnd
+    Name="EducationLevel"
+    Cardinality="1"
+    Source="true"
+    Owner="model.BCs.VOs.EducationLevel_VO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="EducationLevel"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.BCs.VOs.EducationLevel_VO.EducationLevelId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="Users"
+    Cardinality="-1"
+    Owner="model.BCs.VOs.Users_VO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="Users"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.BCs.VOs.Users_VO.EducationLevelId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

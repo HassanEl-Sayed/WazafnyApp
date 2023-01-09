@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="HighEducation_VO"
+  Version="11.1.2.64.36"
+  SelectList="HighEducation_EO.HIGH_EDUCATION_ID, 
+       HighEducation_EO.HIGH_EDUCATION_NAME, 
+       HighEducation_EO.COLLAGE_ID, 
+       HighEducation_EO.EDUCATION_LEVEL_ID"
+  FromList="HIGH_EDUCATION HighEducation_EO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <ViewAccessor
+    Name="Collage_VO1"
+    ViewObjectName="model.BCs.VOs.Collage_VO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="EducationLevel_VO1"
+    ViewObjectName="model.BCs.VOs.EducationLevel_VO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_CollageId"
+    ListVOName="Collage_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CollageId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CollageId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="CollageName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_EducationLevelId"
+    ListVOName="EducationLevel_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="EducationLevelId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="EducationLevelId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="EducationLevelName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="HighEducation_EO"
+    Entity="model.BCs.EOs.HighEducation_EO"/>
+  <ViewAttribute
+    Name="HighEducationId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="HighEducationId"
+    EntityUsage="HighEducation_EO"
+    AliasName="HIGH_EDUCATION_ID"/>
+  <ViewAttribute
+    Name="HighEducationName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="HighEducationName"
+    EntityUsage="HighEducation_EO"
+    AliasName="HIGH_EDUCATION_NAME"/>
+  <ViewAttribute
+    Name="CollageId"
+    PrecisionRule="true"
+    EntityAttrName="CollageId"
+    EntityUsage="HighEducation_EO"
+    AliasName="COLLAGE_ID"
+    LOVName="LOV_CollageId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EducationLevelId"
+    PrecisionRule="true"
+    EntityAttrName="EducationLevelId"
+    EntityUsage="HighEducation_EO"
+    AliasName="EDUCATION_LEVEL_ID"
+    LOVName="LOV_EducationLevelId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+</ViewObject>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TrainingFk1_VL"
+  Version="11.1.2.64.36"
+  EntityAssociation="model.BCs.ASSs.TrainingFk1_ASS">
+  <ViewLinkDefEnd
+    Name="UserProfile"
+    Cardinality="1"
+    Source="true"
+    Owner="model.BCs.VOs.UserProfile_VO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="UserProfile"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.BCs.VOs.UserProfile_VO.UserProfileId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="Training"
+    Cardinality="-1"
+    Owner="model.BCs.VOs.Training_VO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="Training"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.BCs.VOs.Training_VO.UserProfileId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

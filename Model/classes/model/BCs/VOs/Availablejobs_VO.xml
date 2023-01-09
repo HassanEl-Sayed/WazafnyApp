@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Availablejobs_VO"
+  Version="11.1.2.64.36"
+  SelectList="Availablejobs_EO.AVAILJ_ID, 
+       Availablejobs_EO.AVAILJ_JOBNAME, 
+       Availablejobs_EO.AVAILJ_EXP_MIN, 
+       Availablejobs_EO.AVAILJ_EXP_MAX, 
+       Availablejobs_EO.AVAILJ_NO_OF_EMP, 
+       Availablejobs_EO.AVAILJ_DECRIPTION, 
+       Availablejobs_EO.AVAILJ_SHIFT, 
+       Availablejobs_EO.AVAILJ_AGE_MIN, 
+       Availablejobs_EO.AVAILJ_AGE_MAX, 
+       Availablejobs_EO.AVAILJ_SALARY_FROM, 
+       Availablejobs_EO.AVAILJ_SALARY_TO, 
+       Availablejobs_EO.COMP_ID, 
+       Availablejobs_EO.TOWN_ID, 
+       Availablejobs_EO.JOBTYPE_ID, 
+       Availablejobs_EO.DRIVING_ID, 
+       Availablejobs_EO.JOB_SPECIALTY_ID, 
+       Availablejobs_EO.EDUCATION_LEVEL_ID"
+  FromList="AVAILABLEJOBS Availablejobs_EO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <ViewAccessor
+    Name="Company_VO1"
+    ViewObjectName="model.BCs.VOs.Company_VO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Town_VO1"
+    ViewObjectName="model.BCs.VOs.Town_VO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="JobType_VO1"
+    ViewObjectName="model.BCs.VOs.JobType_VO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Driving_VO1"
+    ViewObjectName="model.BCs.VOs.Driving_VO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="JobSpecialty_VO1"
+    ViewObjectName="model.BCs.VOs.JobSpecialty_VO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="EducationLevel_VO1"
+    ViewObjectName="model.BCs.VOs.EducationLevel_VO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_CompId"
+    ListVOName="Company_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CompId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CompId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="CompName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_TownId"
+    ListVOName="Town_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TownId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TownId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TownName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_JobtypeId"
+    ListVOName="JobType_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="JobtypeId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="JobtypeId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="JobtypeName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DrivingId"
+    ListVOName="Driving_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DrivingId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DrivingId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="DrivingType"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_JobSpecialtyId"
+    ListVOName="JobSpecialty_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="JobSpecialtyId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="JobSpecialtyId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="JobSpecialtyName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_EducationLevelId"
+    ListVOName="EducationLevel_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="EducationLevelId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="EducationLevelId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="EducationLevelName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="Availablejobs_EO"
+    Entity="model.BCs.EOs.Availablejobs_EO"/>
+  <ViewAttribute
+    Name="AvailjId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="AvailjId"
+    EntityUsage="Availablejobs_EO"
+    AliasName="AVAILJ_ID"/>
+  <ViewAttribute
+    Name="AvailjJobname"
+    PrecisionRule="true"
+    EntityAttrName="AvailjJobname"
+    EntityUsage="Availablejobs_EO"
+    AliasName="AVAILJ_JOBNAME"/>
+  <ViewAttribute
+    Name="AvailjExpMin"
+    PrecisionRule="true"
+    EntityAttrName="AvailjExpMin"
+    EntityUsage="Availablejobs_EO"
+    AliasName="AVAILJ_EXP_MIN"/>
+  <ViewAttribute
+    Name="AvailjExpMax"
+    PrecisionRule="true"
+    EntityAttrName="AvailjExpMax"
+    EntityUsage="Availablejobs_EO"
+    AliasName="AVAILJ_EXP_MAX"/>
+  <ViewAttribute
+    Name="AvailjNoOfEmp"
+    PrecisionRule="true"
+    EntityAttrName="AvailjNoOfEmp"
+    EntityUsage="Availablejobs_EO"
+    AliasName="AVAILJ_NO_OF_EMP"/>
+  <ViewAttribute
+    Name="AvailjDecription"
+    PrecisionRule="true"
+    EntityAttrName="AvailjDecription"
+    EntityUsage="Availablejobs_EO"
+    AliasName="AVAILJ_DECRIPTION"/>
+  <ViewAttribute
+    Name="AvailjShift"
+    PrecisionRule="true"
+    EntityAttrName="AvailjShift"
+    EntityUsage="Availablejobs_EO"
+    AliasName="AVAILJ_SHIFT"/>
+  <ViewAttribute
+    Name="AvailjAgeMin"
+    PrecisionRule="true"
+    EntityAttrName="AvailjAgeMin"
+    EntityUsage="Availablejobs_EO"
+    AliasName="AVAILJ_AGE_MIN"/>
+  <ViewAttribute
+    Name="AvailjAgeMax"
+    PrecisionRule="true"
+    EntityAttrName="AvailjAgeMax"
+    EntityUsage="Availablejobs_EO"
+    AliasName="AVAILJ_AGE_MAX"/>
+  <ViewAttribute
+    Name="AvailjSalaryFrom"
+    PrecisionRule="true"
+    EntityAttrName="AvailjSalaryFrom"
+    EntityUsage="Availablejobs_EO"
+    AliasName="AVAILJ_SALARY_FROM"/>
+  <ViewAttribute
+    Name="AvailjSalaryTo"
+    PrecisionRule="true"
+    EntityAttrName="AvailjSalaryTo"
+    EntityUsage="Availablejobs_EO"
+    AliasName="AVAILJ_SALARY_TO"/>
+  <ViewAttribute
+    Name="CompId"
+    PrecisionRule="true"
+    EntityAttrName="CompId"
+    EntityUsage="Availablejobs_EO"
+    AliasName="COMP_ID"
+    LOVName="LOV_CompId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TownId"
+    PrecisionRule="true"
+    EntityAttrName="TownId"
+    EntityUsage="Availablejobs_EO"
+    AliasName="TOWN_ID"
+    LOVName="LOV_TownId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="JobtypeId"
+    PrecisionRule="true"
+    EntityAttrName="JobtypeId"
+    EntityUsage="Availablejobs_EO"
+    AliasName="JOBTYPE_ID"
+    LOVName="LOV_JobtypeId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DrivingId"
+    PrecisionRule="true"
+    EntityAttrName="DrivingId"
+    EntityUsage="Availablejobs_EO"
+    AliasName="DRIVING_ID"
+    LOVName="LOV_DrivingId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="JobSpecialtyId"
+    PrecisionRule="true"
+    EntityAttrName="JobSpecialtyId"
+    EntityUsage="Availablejobs_EO"
+    AliasName="JOB_SPECIALTY_ID"
+    LOVName="LOV_JobSpecialtyId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EducationLevelId"
+    PrecisionRule="true"
+    EntityAttrName="EducationLevelId"
+    EntityUsage="Availablejobs_EO"
+    AliasName="EDUCATION_LEVEL_ID"
+    LOVName="LOV_EducationLevelId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewLinkAccessor
+    Name="AvailjProfile"
+    ViewLink="model.BCs.VLs.AvailjProfileFk2_VL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

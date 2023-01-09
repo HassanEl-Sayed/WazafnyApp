@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="JobProfile_VO"
+  Version="11.1.2.64.36"
+  SelectList="JobProfile_EO.USER_PROFILE_ID, 
+       JobProfile_EO.JOB_SPECIALTY_ID"
+  FromList="JOB_PROFILE JobProfile_EO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="JobProfile_EO"
+    Entity="model.BCs.EOs.JobProfile_EO"/>
+  <ViewAttribute
+    Name="UserProfileId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UserProfileId"
+    EntityUsage="JobProfile_EO"
+    AliasName="USER_PROFILE_ID"/>
+  <ViewAttribute
+    Name="JobSpecialtyId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="JobSpecialtyId"
+    EntityUsage="JobProfile_EO"
+    AliasName="JOB_SPECIALTY_ID"/>
+</ViewObject>

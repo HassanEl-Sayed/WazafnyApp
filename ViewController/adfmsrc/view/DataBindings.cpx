@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.64.36" id="DataBindings"
+             SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <pageMap>
+    <page path="/Users.jsf" usageId="view_UsersPageDef"/>
+    <page path="/UseSignr.jsf" usageId="view_UseSignrPageDef"/>
+    <page path="/Usersign.jsf" usageId="view_UsersignPageDef"/>
+    <page path="/UserSign.jsf" usageId="view_UsersignPageDef"/>
+    <page path="/CompanySign.jsf" usageId="view_CompanySignPageDef"/>
+    <page path="PageFlow#CreateInsert1" usageId="view_task1___CreateInsert1PageDef"/>
+    <page path="PageFlow#CreateInsert" usageId="view_task1___CreateInsertPageDef"/>
+    <page path="/Home.jsf" usageId="view_HomePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_UsersPageDef" path="view.pageDefs.UsersPageDef"/>
+    <page id="view_UseSignrPageDef" path="view.pageDefs.UseSignrPageDef"/>
+    <page id="view_UsersignPageDef" path="view.pageDefs.UsersignPageDef"/>
+    <page id="view_CompanySignPageDef" path="view.pageDefs.CompanySignPageDef"/>
+    <page id="view_task1___CreateInsert1PageDef" path="view.pageDefs.task1___CreateInsert1PageDef"/>
+    <page id="view_task1___CreateInsertPageDef" path="view.pageDefs.task1___CreateInsertPageDef"/>
+    <page id="view_HomePageDef" path="view.pageDefs.HomePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModule_AMDataControl" Package="model.BCs.AMs"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModule_AMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="AppModule_AMDataControl1" Package="model.BCs.VOs"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModule_AMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="AppModule_AMDataControl2" Package="model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModule_AMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

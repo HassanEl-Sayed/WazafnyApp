@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Users.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelStretchLayout id="psl1" topHeight="99px" bottomHeight="93px">
+                <f:facet name="top">
+                    <af:panelGridLayout id="pgl1" inlineStyle="background-color:WindowText;">
+                        <af:gridRow marginTop="5px" marginBottom="5px" height="auto" id="gr1">
+                            <af:gridCell marginStart="5px" width="25%" id="gc1">
+                                <af:image source="#{resource['images:Capture.PNG']}" id="i1"
+                                          inlineStyle="width:211px; height:90px;"/>
+                            </af:gridCell>
+                            <af:gridCell marginStart="0px" width="25%" id="gc2"/>
+                            <af:gridCell marginStart="0px" width="25%" id="gc3"/>
+                            <af:gridCell marginStart="0px" marginEnd="5px" width="25%" id="gc4"/>
+                        </af:gridRow>
+                    </af:panelGridLayout>
+                </f:facet>
+                <f:facet name="center">
+                    <af:panelTabbed id="pt1">
+                        <af:showDetailItem text="My Profile" id="sdi1">
+                            <af:panelFormLayout id="pfl1">
+                                <af:inputText value="#{bindings.UserId.inputValue}"
+                                              label="#{bindings.UserId.hints.label}"
+                                              required="#{bindings.UserId.hints.mandatory}"
+                                              columns="#{bindings.UserId.hints.displayWidth}"
+                                              maximumLength="#{bindings.UserId.hints.precision}"
+                                              shortDesc="#{bindings.UserId.hints.tooltip}" id="it1">
+                                    <f:validator binding="#{bindings.UserId.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.UserFname.inputValue}"
+                                              label="#{bindings.UserFname.hints.label}"
+                                              required="#{bindings.UserFname.hints.mandatory}"
+                                              columns="#{bindings.UserFname.hints.displayWidth}"
+                                              maximumLength="#{bindings.UserFname.hints.precision}"
+                                              shortDesc="#{bindings.UserFname.hints.tooltip}" id="it2">
+                                    <f:validator binding="#{bindings.UserFname.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.UserLname.inputValue}"
+                                              label="#{bindings.UserLname.hints.label}"
+                                              required="#{bindings.UserLname.hints.mandatory}"
+                                              columns="#{bindings.UserLname.hints.displayWidth}"
+                                              maximumLength="#{bindings.UserLname.hints.precision}"
+                                              shortDesc="#{bindings.UserLname.hints.tooltip}" id="it3">
+                                    <f:validator binding="#{bindings.UserLname.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.UserBirhyear.inputValue}"
+                                              label="#{bindings.UserBirhyear.hints.label}"
+                                              required="#{bindings.UserBirhyear.hints.mandatory}"
+                                              columns="#{bindings.UserBirhyear.hints.displayWidth}"
+                                              maximumLength="#{bindings.UserBirhyear.hints.precision}"
+                                              shortDesc="#{bindings.UserBirhyear.hints.tooltip}" id="it4">
+                                    <f:validator binding="#{bindings.UserBirhyear.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.UserNationalty.inputValue}"
+                                              label="#{bindings.UserNationalty.hints.label}"
+                                              required="#{bindings.UserNationalty.hints.mandatory}"
+                                              columns="#{bindings.UserNationalty.hints.displayWidth}"
+                                              maximumLength="#{bindings.UserNationalty.hints.precision}"
+                                              shortDesc="#{bindings.UserNationalty.hints.tooltip}" id="it5">
+                                    <f:validator binding="#{bindings.UserNationalty.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.UserPhone.inputValue}"
+                                              label="#{bindings.UserPhone.hints.label}"
+                                              required="#{bindings.UserPhone.hints.mandatory}"
+                                              columns="#{bindings.UserPhone.hints.displayWidth}"
+                                              maximumLength="#{bindings.UserPhone.hints.precision}"
+                                              shortDesc="#{bindings.UserPhone.hints.tooltip}" id="it6">
+                                    <f:validator binding="#{bindings.UserPhone.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.UserEmail.inputValue}"
+                                              label="#{bindings.UserEmail.hints.label}"
+                                              required="#{bindings.UserEmail.hints.mandatory}"
+                                              columns="#{bindings.UserEmail.hints.displayWidth}"
+                                              maximumLength="#{bindings.UserEmail.hints.precision}"
+                                              shortDesc="#{bindings.UserEmail.hints.tooltip}" id="it7">
+                                    <f:validator binding="#{bindings.UserEmail.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.UserPassword.inputValue}"
+                                              label="#{bindings.UserPassword.hints.label}"
+                                              required="#{bindings.UserPassword.hints.mandatory}"
+                                              columns="#{bindings.UserPassword.hints.displayWidth}"
+                                              maximumLength="#{bindings.UserPassword.hints.precision}"
+                                              shortDesc="#{bindings.UserPassword.hints.tooltip}" id="it8">
+                                    <f:validator binding="#{bindings.UserPassword.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.TownId.inputValue}"
+                                              label="#{bindings.TownId.hints.label}"
+                                              required="#{bindings.TownId.hints.mandatory}"
+                                              columns="#{bindings.TownId.hints.displayWidth}"
+                                              maximumLength="#{bindings.TownId.hints.precision}"
+                                              shortDesc="#{bindings.TownId.hints.tooltip}" id="it9">
+                                    <f:validator binding="#{bindings.TownId.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.GenderId.inputValue}"
+                                              label="#{bindings.GenderId.hints.label}"
+                                              required="#{bindings.GenderId.hints.mandatory}"
+                                              columns="#{bindings.GenderId.hints.displayWidth}"
+                                              maximumLength="#{bindings.GenderId.hints.precision}"
+                                              shortDesc="#{bindings.GenderId.hints.tooltip}" id="it10">
+                                    <f:validator binding="#{bindings.GenderId.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.EducationLevelId.inputValue}"
+                                              label="#{bindings.EducationLevelId.hints.label}"
+                                              required="#{bindings.EducationLevelId.hints.mandatory}"
+                                              columns="#{bindings.EducationLevelId.hints.displayWidth}"
+                                              maximumLength="#{bindings.EducationLevelId.hints.precision}"
+                                              shortDesc="#{bindings.EducationLevelId.hints.tooltip}" id="it11">
+                                    <f:validator binding="#{bindings.EducationLevelId.validator}"/>
+                                </af:inputText>
+                                <f:facet name="footer">
+                                    <af:panelGroupLayout layout="horizontal" id="pgl3">
+                                        <f:facet name="separator">
+                                            <af:spacer width="10" height="1" id="s1"/>
+                                        </f:facet>
+                                        <af:commandButton actionListener="#{bindings.First.execute}" text="First"
+                                                          disabled="#{!bindings.First.enabled}" partialSubmit="true"
+                                                          id="cb1"/>
+                                        <af:commandButton actionListener="#{bindings.Previous.execute}" text="Previous"
+                                                          disabled="#{!bindings.Previous.enabled}" partialSubmit="true"
+                                                          id="cb2"/>
+                                        <af:commandButton actionListener="#{bindings.Next.execute}" text="Next"
+                                                          disabled="#{!bindings.Next.enabled}" partialSubmit="true"
+                                                          id="cb3"/>
+                                        <af:commandButton actionListener="#{bindings.Last.execute}" text="Last"
+                                                          disabled="#{!bindings.Last.enabled}" partialSubmit="true"
+                                                          id="cb4"/>
+                                    </af:panelGroupLayout>
+                                </f:facet>
+                            </af:panelFormLayout>
+                        </af:showDetailItem>
+                        <af:showDetailItem text="Finding Jobs" id="sdi2"/>
+                    </af:panelTabbed>
+                    <!-- id="af_one_column_header_footer_stretched"   -->
+                </f:facet>
+                <f:facet name="bottom">
+                    <af:panelGridLayout id="pgl2" inlineStyle="background-color:Black;">
+                        <af:gridRow marginTop="5px" marginBottom="5px" height="auto" id="gr2">
+                            <af:gridCell marginStart="5px" width="50%" id="gc5"
+                                         inlineStyle="text-align:center; vertical-align:middle;">
+                               
+                                
+                                    <af:outputText value="Wazafny" id="ot1"
+                                                   inlineStyle="color:yellow; font-family:Arial, Helvetica, sans-serif; font-size:35px; font-weight:bold; text-align:center; text-decoration:none; vertical-align:middle;"/>
+                               
+                            </af:gridCell>
+                            <af:gridCell marginStart="1px" marginEnd="5px" width="50%" id="gc6">
+                            <div align="center" xmlns="http://www.w3.org/1999/xhtml">
+                                    <p>
+                                        <af:outputText value="Contact Us: +02 01146318165 " id="ot3"
+                                                       inlineStyle="color:yellow; font-family:Arial, Helvetica, sans-serif; font-size:25px; font-weight:bold; text-align:center; text-decoration:none;"/>
+                                    </p>
+                                    
+                                        <af:outputText value="Wazafny123@gmail.com" id="ot2"
+                                                       inlineStyle="color:yellow; font-family:Arial, Helvetica, sans-serif; font-size:25px; font-weight:bold; text-align:center; text-decoration:none;"/>
+                                    
+                                </div>
+                            </af:gridCell>
+
+                        </af:gridRow>
+                    </af:panelGridLayout>
+                </f:facet>
+            </af:panelStretchLayout>
+        </af:form>
+    </af:document>
+</f:view>

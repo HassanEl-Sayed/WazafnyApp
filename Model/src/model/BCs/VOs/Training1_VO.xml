@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Training1_VO"
+  Version="11.1.2.64.36"
+  SelectList="Training1_EO.TRAINING_ID, 
+       Training1_EO.TRAINING_YEAR, 
+       Training1_EO.TRAINING_COURCE_NAME, 
+       Training1_EO.USER_PROFILE_ID"
+  FromList="TRAINING Training1_EO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="Training1_EO"
+    Entity="model.BCs.EOs.Training1_EO"/>
+  <ViewAttribute
+    Name="TrainingId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="TrainingId"
+    EntityUsage="Training1_EO"
+    AliasName="TRAINING_ID"/>
+  <ViewAttribute
+    Name="TrainingYear"
+    PrecisionRule="true"
+    EntityAttrName="TrainingYear"
+    EntityUsage="Training1_EO"
+    AliasName="TRAINING_YEAR"/>
+  <ViewAttribute
+    Name="TrainingCourceName"
+    PrecisionRule="true"
+    EntityAttrName="TrainingCourceName"
+    EntityUsage="Training1_EO"
+    AliasName="TRAINING_COURCE_NAME"/>
+  <ViewAttribute
+    Name="UserProfileId"
+    PrecisionRule="true"
+    EntityAttrName="UserProfileId"
+    EntityUsage="Training1_EO"
+    AliasName="USER_PROFILE_ID"/>
+</ViewObject>

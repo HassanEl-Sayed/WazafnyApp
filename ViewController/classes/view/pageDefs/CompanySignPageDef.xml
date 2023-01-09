@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="CompanySignPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Company1" RangeSize="25" DataControl="AppModule_AMDataControl" id="Company1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="Company1Iterator" id="CompName">
+      <AttrNames>
+        <Item Value="CompName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Company1Iterator" id="CompPhone">
+      <AttrNames>
+        <Item Value="CompPhone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Company1Iterator" id="CompLinkweb">
+      <AttrNames>
+        <Item Value="CompLinkweb"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Company1Iterator" id="CeoFname">
+      <AttrNames>
+        <Item Value="CeoFname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Company1Iterator" id="CeoLname">
+      <AttrNames>
+        <Item Value="CeoLname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Company1Iterator" id="CompNoOfEmp">
+      <AttrNames>
+        <Item Value="CompNoOfEmp"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Company1Iterator" id="CompEmail">
+      <AttrNames>
+        <Item Value="CompEmail"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Company1Iterator" id="CompPassword">
+      <AttrNames>
+        <Item Value="CompPassword"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Company1Iterator" id="CompLogo">
+      <AttrNames>
+        <Item Value="CompLogo"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues StaticList="false" IterBinding="Company1Iterator" Uses="LOV_TownId" id="TownId"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModule_AMDataControl"/>
+  </bindings>
+</pageDefinition>

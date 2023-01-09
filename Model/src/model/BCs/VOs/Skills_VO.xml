@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Skills_VO"
+  Version="11.1.2.64.36"
+  SelectList="Skills_EO.SKILL_ID, 
+       Skills_EO.SKILL_NAME, 
+       Skills_EO.SKILL_LEVEL"
+  FromList="SKILLS Skills_EO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="Skills_EO"
+    Entity="model.BCs.EOs.Skills_EO"/>
+  <ViewAttribute
+    Name="SkillId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="SkillId"
+    EntityUsage="Skills_EO"
+    AliasName="SKILL_ID"/>
+  <ViewAttribute
+    Name="SkillName"
+    PrecisionRule="true"
+    EntityAttrName="SkillName"
+    EntityUsage="Skills_EO"
+    AliasName="SKILL_NAME"/>
+  <ViewAttribute
+    Name="SkillLevel"
+    PrecisionRule="true"
+    EntityAttrName="SkillLevel"
+    EntityUsage="Skills_EO"
+    AliasName="SKILL_LEVEL"/>
+  <ViewLinkAccessor
+    Name="SkillProfile"
+    ViewLink="model.BCs.VLs.SkillProfileFk1_VL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

@@ -1,0 +1,27 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="model.BCs.AMs.AppModule_AM">
+      <AppModuleConfig name="17B89F4554B" DBconnection="java:comp/env/jdbc/wazafny1DS" ApplicationName="model.BCs.AMs.AppModule_AM" DeployPlatform="LOCAL" IsLazyLoadingTrue="true" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" JDBCName="wazafny1" BC4JConfigName="AppModule_AMLocal" jbo.project="model.Model">
+         <Database jbo.locking.mode="optimistic" jbo.TypeMapEntries="OracleApps" jbo.SQLBuilder="Oracle"/>
+         <Security AppModuleJndiName="model.BCs.AMs.AppModule_AM"/>
+         <Tester FullProxyInterfaceName="model.BCs.AMs.common.AppModule_AM"/>
+         <Custom LastUsedConfiguration="AppModule_AMLocal" JDBCDataSource="java:comp/env/jdbc/wazafny1DS"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+   <AppModuleConfigBag ApplicationName="model.BCs.VOs.AppModule_AM">
+      <AppModuleConfig name="17B89BB8090" DBconnection="java:comp/env/jdbc/wazafny1DS" ApplicationName="model.BCs.VOs.AppModule_AM" DeployPlatform="LOCAL" IsLazyLoadingTrue="true" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" JDBCName="wazafny1" BC4JConfigName="AppModule_AMLocal" jbo.project="model.Model">
+         <Database jbo.locking.mode="optimistic" jbo.TypeMapEntries="OracleApps" jbo.SQLBuilder="Oracle"/>
+         <Security AppModuleJndiName="model.BCs.VOs.AppModule_AM"/>
+         <Tester FullProxyInterfaceName="model.BCs.VOs.common.AppModule_AM"/>
+         <Custom LastUsedConfiguration="AppModule_AMLocal" JDBCDataSource="java:comp/env/jdbc/wazafny1DS"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+   <AppModuleConfigBag ApplicationName="model.AppModule_AM">
+      <AppModuleConfig name="17B89BA3BC1" DBconnection="java:comp/env/jdbc/wazafny1DS" ApplicationName="model.AppModule_AM" DeployPlatform="LOCAL" IsLazyLoadingTrue="true" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" JDBCName="wazafny1" BC4JConfigName="AppModule_AMLocal" jbo.project="model.Model">
+         <Database jbo.locking.mode="optimistic" jbo.TypeMapEntries="OracleApps" jbo.SQLBuilder="Oracle"/>
+         <Security AppModuleJndiName="model.AppModule_AM"/>
+         <Tester FullProxyInterfaceName="model.common.AppModule_AM"/>
+         <Custom LastUsedConfiguration="AppModule_AMLocal" JDBCDataSource="java:comp/env/jdbc/wazafny1DS"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

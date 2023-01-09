@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Collage_VO"
+  Version="11.1.2.64.36"
+  SelectList="Collage_EO.COLLAGE_ID, 
+       Collage_EO.COLLAGE_NAME"
+  FromList="COLLAGE Collage_EO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="Collage_EO"
+    Entity="model.BCs.EOs.Collage_EO"/>
+  <ViewAttribute
+    Name="CollageId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CollageId"
+    EntityUsage="Collage_EO"
+    AliasName="COLLAGE_ID"/>
+  <ViewAttribute
+    Name="CollageName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CollageName"
+    EntityUsage="Collage_EO"
+    AliasName="COLLAGE_NAME"/>
+  <ViewLinkAccessor
+    Name="CollageUnvirsty"
+    ViewLink="model.BCs.VLs.CollageUnvirstyFk1_VL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="HighEducation"
+    ViewLink="model.BCs.VLs.HighEducationFk1_VL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

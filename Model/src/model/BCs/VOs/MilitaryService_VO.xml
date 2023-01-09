@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MilitaryService_VO"
+  Version="11.1.2.64.36"
+  SelectList="MilitaryService_EO.MILITARY_SERVICE_ID, 
+       MilitaryService_EO.MILITARY_SERVICE_STATE, 
+       MilitaryService_EO.GENDER_ID"
+  FromList="MILITARY_SERVICE MilitaryService_EO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <ViewAccessor
+    Name="Gender_VO1"
+    ViewObjectName="model.BCs.VOs.Gender_VO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_GenderId"
+    ListVOName="Gender_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GenderId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GenderId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GenderName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="MilitaryService_EO"
+    Entity="model.BCs.EOs.MilitaryService_EO"/>
+  <ViewAttribute
+    Name="MilitaryServiceId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="MilitaryServiceId"
+    EntityUsage="MilitaryService_EO"
+    AliasName="MILITARY_SERVICE_ID"/>
+  <ViewAttribute
+    Name="MilitaryServiceState"
+    PrecisionRule="true"
+    EntityAttrName="MilitaryServiceState"
+    EntityUsage="MilitaryService_EO"
+    AliasName="MILITARY_SERVICE_STATE"/>
+  <ViewAttribute
+    Name="GenderId"
+    PrecisionRule="true"
+    EntityAttrName="GenderId"
+    EntityUsage="MilitaryService_EO"
+    AliasName="GENDER_ID"
+    LOVName="LOV_GenderId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+</ViewObject>

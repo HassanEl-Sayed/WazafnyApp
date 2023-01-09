@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SkillProfile_VO"
+  Version="11.1.2.64.36"
+  SelectList="SkillProfile_EO.USER_PROFILE_ID, 
+       SkillProfile_EO.SKILL_ID"
+  FromList="SKILL_PROFILE SkillProfile_EO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="SkillProfile_EO"
+    Entity="model.BCs.EOs.SkillProfile_EO"/>
+  <ViewAttribute
+    Name="UserProfileId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UserProfileId"
+    EntityUsage="SkillProfile_EO"
+    AliasName="USER_PROFILE_ID"/>
+  <ViewAttribute
+    Name="SkillId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="SkillId"
+    EntityUsage="SkillProfile_EO"
+    AliasName="SKILL_ID"/>
+</ViewObject>

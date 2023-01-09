@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="JobSpecialtyFk1_VL"
+  Version="11.1.2.64.36"
+  EntityAssociation="model.BCs.ASSs.JobSpecialtyFk1_ASS">
+  <ViewLinkDefEnd
+    Name="Jobs"
+    Cardinality="1"
+    Source="true"
+    Owner="model.BCs.VOs.Jobs_VO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="Jobs"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.BCs.VOs.Jobs_VO.JobId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="JobSpecialty"
+    Cardinality="-1"
+    Owner="model.BCs.VOs.JobSpecialty_VO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="JobSpecialty"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.BCs.VOs.JobSpecialty_VO.JobId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

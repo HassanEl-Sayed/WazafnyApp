@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Home.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelStretchLayout id="psl1">
+                <f:facet name="center">
+                    <af:panelSplitter id="ps1" splitterPosition="318">
+                        <f:facet name="first">
+                            <af:panelFormLayout id="pfl1">
+                                <af:inputText value="#{bindings.user_email.inputValue}"
+                                              label="#{bindings.user_email.hints.label}"
+                                              required="#{bindings.user_email.hints.mandatory}"
+                                              columns="#{bindings.user_email.hints.displayWidth}"
+                                              maximumLength="#{bindings.user_email.hints.precision}"
+                                              shortDesc="#{bindings.user_email.hints.tooltip}" id="it1">
+                                    <f:validator binding="#{bindings.user_email.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.user_pass.inputValue}"
+                                              label="#{bindings.user_pass.hints.label}"
+                                              required="#{bindings.user_pass.hints.mandatory}"
+                                              columns="#{bindings.user_pass.hints.displayWidth}"
+                                              maximumLength="#{bindings.user_pass.hints.precision}"
+                                              shortDesc="#{bindings.user_pass.hints.tooltip}" id="it2">
+                                    <f:validator binding="#{bindings.user_pass.validator}"/>
+                                </af:inputText>
+                                <af:commandButton actionListener="#{bindings.ExecuteWithParams.execute}"
+                                                  text="ExecuteWithParams"
+                                                  disabled="#{!bindings.ExecuteWithParams.enabled}" id="cb1"/>
+                                <af:panelFormLayout id="pfl2">
+                                    <af:panelLabelAndMessage label="#{bindings.UserId.hints.label}" id="plam1">
+                                        <af:outputText value="#{bindings.UserId.inputValue}"
+                                                       shortDesc="#{bindings.UserId.hints.tooltip}" id="ot1"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.UserFname.hints.label}" id="plam2">
+                                        <af:outputText value="#{bindings.UserFname.inputValue}"
+                                                       shortDesc="#{bindings.UserFname.hints.tooltip}" id="ot2"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.UserLname.hints.label}" id="plam3">
+                                        <af:outputText value="#{bindings.UserLname.inputValue}"
+                                                       shortDesc="#{bindings.UserLname.hints.tooltip}" id="ot3"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.UserNationalty.hints.label}" id="plam4">
+                                        <af:outputText value="#{bindings.UserNationalty.inputValue}"
+                                                       shortDesc="#{bindings.UserNationalty.hints.tooltip}" id="ot4"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.UserPhone.hints.label}" id="plam5">
+                                        <af:outputText value="#{bindings.UserPhone.inputValue}"
+                                                       shortDesc="#{bindings.UserPhone.hints.tooltip}" id="ot5"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.UserEmail.hints.label}" id="plam6">
+                                        <af:outputText value="#{bindings.UserEmail.inputValue}"
+                                                       shortDesc="#{bindings.UserEmail.hints.tooltip}" id="ot6"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.UserPassword.hints.label}" id="plam7">
+                                        <af:outputText value="#{bindings.UserPassword.inputValue}"
+                                                       shortDesc="#{bindings.UserPassword.hints.tooltip}" id="ot7"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.TownId.hints.label}" id="plam8">
+                                        <af:outputText value="#{bindings.TownId.inputValue}"
+                                                       shortDesc="#{bindings.TownId.hints.tooltip}" id="ot8"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.GenderId.hints.label}" id="plam9">
+                                        <af:outputText value="#{bindings.GenderId.inputValue}"
+                                                       shortDesc="#{bindings.GenderId.hints.tooltip}" id="ot9"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.EducationLevelId.hints.label}"
+                                                             id="plam10">
+                                        <af:outputText value="#{bindings.EducationLevelId.inputValue}"
+                                                       shortDesc="#{bindings.EducationLevelId.hints.tooltip}"
+                                                       id="ot10"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.MilitaryServiceId.hints.label}"
+                                                             id="plam11">
+                                        <af:outputText value="#{bindings.MilitaryServiceId.inputValue}"
+                                                       shortDesc="#{bindings.MilitaryServiceId.hints.tooltip}"
+                                                       id="ot11"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.Birhdate.hints.label}" id="plam12">
+                                        <af:outputText value="#{bindings.Birhdate.inputValue}"
+                                                       shortDesc="#{bindings.Birhdate.hints.tooltip}" id="ot12">
+                                            <af:convertDateTime pattern="#{bindings.Birhdate.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.SpecialtiesId.hints.label}" id="plam13">
+                                        <af:outputText value="#{bindings.SpecialtiesId.inputValue}"
+                                                       shortDesc="#{bindings.SpecialtiesId.hints.tooltip}" id="ot13"/>
+                                    </af:panelLabelAndMessage>
+                                </af:panelFormLayout>
+                            </af:panelFormLayout>
+                        </f:facet>
+                        <f:facet name="second">
+                            <af:commandButton text="commandButton 2" id="cb2" action="tosigncompany"/>
+                        </f:facet>
+                    </af:panelSplitter>
+                    <!-- id="af_one_column_stretched"   -->
+                </f:facet>
+            </af:panelStretchLayout>
+        </af:form>
+    </af:document>
+</f:view>

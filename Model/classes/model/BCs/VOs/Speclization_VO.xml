@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Speclization_VO"
+  Version="11.1.2.64.36"
+  SelectList="Speclization_EO.SPECLIZATION_ID, 
+       Speclization_EO.SPECLIZATION_NAME, 
+       Speclization_EO.EDUCATION_LEVEL_ID, 
+       Speclization_EO.CERTIFICATE_ID"
+  FromList="SPECLIZATION Speclization_EO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <ViewAccessor
+    Name="EducationLevel_VO1"
+    ViewObjectName="model.BCs.VOs.EducationLevel_VO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Certificate_VO1"
+    ViewObjectName="model.BCs.VOs.Certificate_VO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_EducationLevelId"
+    ListVOName="EducationLevel_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="EducationLevelId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="EducationLevelId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="EducationLevelName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CertificateId"
+    ListVOName="Certificate_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CertificateId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CertificateId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="CertificateName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="Speclization_EO"
+    Entity="model.BCs.EOs.Speclization_EO"/>
+  <ViewAttribute
+    Name="SpeclizationId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="SpeclizationId"
+    EntityUsage="Speclization_EO"
+    AliasName="SPECLIZATION_ID"/>
+  <ViewAttribute
+    Name="SpeclizationName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="SpeclizationName"
+    EntityUsage="Speclization_EO"
+    AliasName="SPECLIZATION_NAME"/>
+  <ViewAttribute
+    Name="EducationLevelId"
+    PrecisionRule="true"
+    EntityAttrName="EducationLevelId"
+    EntityUsage="Speclization_EO"
+    AliasName="EDUCATION_LEVEL_ID"
+    LOVName="LOV_EducationLevelId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CertificateId"
+    PrecisionRule="true"
+    EntityAttrName="CertificateId"
+    EntityUsage="Speclization_EO"
+    AliasName="CERTIFICATE_ID"
+    LOVName="LOV_CertificateId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+</ViewObject>

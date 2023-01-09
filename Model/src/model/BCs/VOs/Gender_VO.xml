@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Gender_VO"
+  Version="11.1.2.64.36"
+  SelectList="Gender_EO.GENDER_ID, 
+       Gender_EO.GENDER_NAME"
+  FromList="GENDER Gender_EO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="Gender_EO"
+    Entity="model.BCs.EOs.Gender_EO"/>
+  <ViewAttribute
+    Name="GenderId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="GenderId"
+    EntityUsage="Gender_EO"
+    AliasName="GENDER_ID"/>
+  <ViewAttribute
+    Name="GenderName"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="GenderName"
+    EntityUsage="Gender_EO"
+    AliasName="GENDER_NAME"/>
+  <ViewLinkAccessor
+    Name="MilitaryService"
+    ViewLink="model.BCs.VLs.MilitaryServiceFk1_VL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="Users"
+    ViewLink="model.BCs.VLs.UsersFk2_VL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:cc="http://java.sun.com/jsf/composite">
+    <af:document title="UserSign.jsf" id="d1" inlineStyle='background-image:url("MicrosoftTeams-image.png");'
+                 binding="#{backingBeanScope.Script1.d1}">
+        <af:messages id="m1" binding="#{backingBeanScope.Script1.m1}"/>
+        <af:form id="f1" binding="#{backingBeanScope.Script1.f1}">
+            <af:panelStretchLayout id="psl1" inlineStyle="width:1491px; height:889px;"
+                                   binding="#{backingBeanScope.Script1.psl1}">
+                <f:facet name="center">
+                    <!-- id="af_one_column_stretched"   -->
+                    <af:panelGridLayout id="pgl1" binding="#{backingBeanScope.Script1.pgl1}">
+                        <af:gridRow marginTop="5px" height="auto" id="gr1" binding="#{backingBeanScope.Script1.gr1}">
+                            <af:gridCell marginStart="5px" width="34%" id="gc1"
+                                         binding="#{backingBeanScope.Script1.gc1}"/>
+                            <af:gridCell marginStart="1px" width="33%" id="gc2"
+                                         binding="#{backingBeanScope.Script1.gc2}" inlineStyle="text-align:right;">
+                                <af:outputText value="    Sign to find job" id="ot1"
+                                               inlineStyle="font-size:40px; text-align:right;"
+                                               styleClass="f1" binding="#{backingBeanScope.Script1.ot1}"/>
+                            </af:gridCell>
+                            <af:gridCell marginStart="1px" marginEnd="5px" width="33%" id="gc3"
+                                         binding="#{backingBeanScope.Script1.gc3}"/>
+                        </af:gridRow>
+                        <af:gridRow marginTop="1px" height="auto" id="gr2" binding="#{backingBeanScope.Script1.gr2}">
+                            <af:gridCell marginStart="5px" width="34%" id="gc4"
+                                         binding="#{backingBeanScope.Script1.gc4}"/>
+                            <af:gridCell marginStart="1px" width="33%" id="gc5"
+                                         binding="#{backingBeanScope.Script1.gc5}">
+                                <af:panelFormLayout id="pfl3" binding="#{backingBeanScope.Script1.pfl3}">
+                                    <af:inputText value="#{bindings.UserFname.inputValue}" label="First name"
+                                                  required="#{bindings.UserFname.hints.mandatory}"
+                                                  columns="#{bindings.UserFname.hints.displayWidth}"
+                                                  maximumLength="#{bindings.UserFname.hints.precision}"
+                                                  shortDesc="#{bindings.UserFname.hints.tooltip}" id="it1"
+                                                  binding="#{backingBeanScope.Script1.it1}" styleClass="lableSign"
+                                                  contentStyle="width:170px;height:25px"
+                                                  inlineStyle="text-align:center;">
+                                        <f:validator binding="#{bindings.UserFname.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.UserLname.inputValue}" label="last name"
+                                                  required="#{bindings.UserLname.hints.mandatory}"
+                                                  columns="#{bindings.UserLname.hints.displayWidth}"
+                                                  maximumLength="#{bindings.UserLname.hints.precision}"
+                                                  shortDesc="#{bindings.UserLname.hints.tooltip}" id="it2"
+                                                  binding="#{backingBeanScope.Script1.it2}" styleClass="lableSign"
+                                                  contentStyle="width:170px;height:25px"
+                                                  inlineStyle="text-align:center;">
+                                        <f:validator binding="#{bindings.UserLname.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.UserNationalty.inputValue}" label="Nationality"
+                                                  required="#{bindings.UserNationalty.hints.mandatory}"
+                                                  columns="#{bindings.UserNationalty.hints.displayWidth}"
+                                                  maximumLength="#{bindings.UserNationalty.hints.precision}"
+                                                  shortDesc="#{bindings.UserNationalty.hints.tooltip}" id="it3"
+                                                  binding="#{backingBeanScope.Script1.it3}" styleClass="lableSign"
+                                                  contentStyle="width:170px;height:25px"
+                                                  inlineStyle="text-align:center;">
+                                        <f:validator binding="#{bindings.UserNationalty.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.UserPhone.inputValue}" label="phone"
+                                                  required="#{bindings.UserPhone.hints.mandatory}"
+                                                  columns="#{bindings.UserPhone.hints.displayWidth}"
+                                                  maximumLength="#{bindings.UserPhone.hints.precision}"
+                                                  shortDesc="#{bindings.UserPhone.hints.tooltip}" id="it4"
+                                                  binding="#{backingBeanScope.Script1.it4}" styleClass="lableSign"
+                                                  contentStyle="width:170px;height:25px"
+                                                  inlineStyle="text-align:center;">
+                                        <f:validator binding="#{bindings.UserPhone.validator}"/>
+                                    </af:inputText>
+                                    <af:inputDate value="#{bindings.Birhdate.inputValue}" label="Birthdate"
+                                                  required="#{bindings.Birhdate.hints.mandatory}"
+                                                  columns="#{bindings.Birhdate.hints.displayWidth}"
+                                                  shortDesc="#{bindings.Birhdate.hints.tooltip}" id="id1"
+                                                  binding="#{backingBeanScope.Script1.id1}" styleClass="date"
+                                                  contentStyle="width:170px;height:25px" labelStyle="date"
+                                                  inlineStyle="text-align:center;">
+                                        <f:validator binding="#{bindings.Birhdate.validator}"/>
+                                        <af:convertDateTime pattern="#{bindings.Birhdate.format}"/>
+                                    </af:inputDate>
+                                    <af:inputText value="#{bindings.UserEmail.inputValue}" label="Email"
+                                                  required="#{bindings.UserEmail.hints.mandatory}"
+                                                  columns="#{bindings.UserEmail.hints.displayWidth}"
+                                                  maximumLength="#{bindings.UserEmail.hints.precision}"
+                                                  shortDesc="#{bindings.UserEmail.hints.tooltip}" id="it5"
+                                                  binding="#{backingBeanScope.Script1.it5}" styleClass="lableSign"
+                                                  contentStyle="width:170px;height:25px"
+                                                  inlineStyle="text-align:center;">
+                                        <f:validator binding="#{bindings.UserEmail.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.UserPassword.inputValue}" label="Password"
+                                                  required="#{bindings.UserPassword.hints.mandatory}"
+                                                  columns="#{bindings.UserPassword.hints.displayWidth}"
+                                                  maximumLength="#{bindings.UserPassword.hints.precision}"
+                                                  shortDesc="#{bindings.UserPassword.hints.tooltip}" id="it6"
+                                                  binding="#{backingBeanScope.Script1.it6}" styleClass="lableSign"
+                                                  contentStyle="width:170px;height:25px" secret="true"
+                                                  inlineStyle="text-align:center;">
+                                        <f:validator binding="#{bindings.UserPassword.validator}"/>
+                                    </af:inputText>
+                                    <af:selectOneChoice value="#{bindings.GenderId.inputValue}"
+                                                        label="#{bindings.GenderId.label}"
+                                                        required="#{bindings.GenderId.hints.mandatory}"
+                                                        shortDesc="#{bindings.GenderId.hints.tooltip}" id="soc2"
+                                                        binding="#{backingBeanScope.Script1.soc2}" styleClass="lov"
+                                                        contentStyle="width:170px;height:25px"
+                                                        inlineStyle="text-align:center;">
+                                        <f:selectItems value="#{bindings.GenderId.items}" id="si2"
+                                                       binding="#{backingBeanScope.Script1.si2}"/>
+                                    </af:selectOneChoice>
+                                    <af:selectOneChoice value="#{bindings.MilitaryServiceId.inputValue}"
+                                                        label="#{bindings.MilitaryServiceId.label}"
+                                                        required="#{bindings.MilitaryServiceId.hints.mandatory}"
+                                                        shortDesc="#{bindings.MilitaryServiceId.hints.tooltip}"
+                                                        id="soc3" binding="#{backingBeanScope.Script1.soc3}"
+                                                        styleClass="lov" contentStyle="width:170px;height:25px"
+                                                        inlineStyle="text-align:center;">
+                                        <f:selectItems value="#{bindings.MilitaryServiceId.items}" id="si3"
+                                                       binding="#{backingBeanScope.Script1.si3}"/>
+                                    </af:selectOneChoice>
+                                    <af:inputListOfValues id="townIdId"
+                                                          popupTitle="Search and Select: #{bindings.TownId.hints.label}"
+                                                          value="#{bindings.TownId.inputValue}"
+                                                          label="#{bindings.TownId.hints.label}"
+                                                          model="#{bindings.TownId.listOfValuesModel}"
+                                                          required="#{bindings.TownId.hints.mandatory}"
+                                                          columns="#{bindings.TownId.hints.displayWidth}"
+                                                          shortDesc="#{bindings.TownId.hints.tooltip}"
+                                                          binding="#{backingBeanScope.Script1.townIdId}"
+                                                          styleClass="list" contentStyle="width:170px;height:25px"
+                                                          inlineStyle="text-align:center;">
+                                        <f:validator binding="#{bindings.TownId.validator}"/>
+                                        <af:convertNumber groupingUsed="false" pattern="#{bindings.TownId.format}"/>
+                                    </af:inputListOfValues>
+                                    <af:selectOneChoice value="#{bindings.EducationLevelId.inputValue}"
+                                                        label="#{bindings.EducationLevelId.label}"
+                                                        required="#{bindings.EducationLevelId.hints.mandatory}"
+                                                        shortDesc="#{bindings.EducationLevelId.hints.tooltip}" id="soc1"
+                                                        binding="#{backingBeanScope.Script1.soc1}" styleClass="lov"
+                                                        contentStyle="width:170px;height:25px"
+                                                        inlineStyle="text-align:center;">
+                                        <f:selectItems value="#{bindings.EducationLevelId.items}" id="si1"
+                                                       binding="#{backingBeanScope.Script1.si1}"/>
+                                    </af:selectOneChoice>
+                                    <af:inputListOfValues id="specialtiesIdId"
+                                                          popupTitle="Search and Select: #{bindings.SpecialtiesId.hints.label}"
+                                                          value="#{bindings.SpecialtiesId.inputValue}"
+                                                          label="#{bindings.SpecialtiesId.hints.label}"
+                                                          model="#{bindings.SpecialtiesId.listOfValuesModel}"
+                                                          required="#{bindings.SpecialtiesId.hints.mandatory}"
+                                                          columns="#{bindings.SpecialtiesId.hints.displayWidth}"
+                                                          shortDesc="#{bindings.SpecialtiesId.hints.tooltip}"
+                                                          binding="#{backingBeanScope.Script1.specialtiesIdId}"
+                                                          styleClass="list" contentStyle="width:170px;height:25px"
+                                                          inlineStyle="text-align:center;">
+                                        <f:validator binding="#{bindings.SpecialtiesId.validator}"/>
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.SpecialtiesId.format}"/>
+                                    </af:inputListOfValues>
+                                    <af:panelGroupLayout id="pgl2" binding="#{backingBeanScope.Script1.pgl2}"
+                                                         inlineStyle="margin:0%;">
+                                        <af:commandButton actionListener="#{bindings.Commit.execute}" text="Save"
+                                                          disabled="#{!bindings.Commit.enabled}" id="cb1"
+                                                          styleClass="fancyArrowNext"
+                                                          binding="#{backingBeanScope.Script1.cb1}"/>
+                                        <af:commandButton text="Login" id="cb2"
+                                                          binding="#{backingBeanScope.Script1.cb2}"
+                                                          styleClass="fancyArrowNext"/>
+                                        <af:commandButton text="Home" id="cb3" binding="#{backingBeanScope.Script1.cb3}"
+                                                          styleClass="fancyArrowNext" action="toHome"/>
+                                    </af:panelGroupLayout>
+                                </af:panelFormLayout>
+                            </af:gridCell>
+                            <af:gridCell marginStart="1px" marginEnd="5px" width="33%" id="gc6"
+                                         binding="#{backingBeanScope.Script1.gc6}"/>
+                        </af:gridRow>
+                        <af:gridRow marginTop="1px" marginBottom="5px" height="auto" id="gr3"
+                                    binding="#{backingBeanScope.Script1.gr3}">
+                            <af:gridCell marginStart="5px" width="34%" id="gc7"
+                                         binding="#{backingBeanScope.Script1.gc7}"/>
+                            <af:gridCell marginStart="1px" width="33%" id="gc8"
+                                         binding="#{backingBeanScope.Script1.gc8}"/>
+                            <af:gridCell marginStart="1px" marginEnd="5px" width="33%" id="gc9"
+                                         binding="#{backingBeanScope.Script1.gc9}"/>
+                        </af:gridRow>
+                    </af:panelGridLayout>
+                </f:facet>
+            </af:panelStretchLayout>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:Script1-->
+</f:view>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AvailjProfile_VO"
+  Version="11.1.2.64.36"
+  SelectList="AvailjProfile_EO.AVAILJ_ID, 
+       AvailjProfile_EO.USER_PROFILE_ID"
+  FromList="AVAILJ_PROFILE AvailjProfile_EO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="AvailjProfile_EO"
+    Entity="model.BCs.EOs.AvailjProfile_EO"/>
+  <ViewAttribute
+    Name="AvailjId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="AvailjId"
+    EntityUsage="AvailjProfile_EO"
+    AliasName="AVAILJ_ID"/>
+  <ViewAttribute
+    Name="UserProfileId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UserProfileId"
+    EntityUsage="AvailjProfile_EO"
+    AliasName="USER_PROFILE_ID"/>
+</ViewObject>

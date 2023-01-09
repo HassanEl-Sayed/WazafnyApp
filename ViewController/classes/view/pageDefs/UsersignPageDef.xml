@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="UsersignPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Town1" RangeSize="25" DataControl="AppModule_AMDataControl" id="Town1Iterator"
+              ChangeEventPolicy="ppr"/>
+    <iterator Binds="Users2_1" RangeSize="25" DataControl="AppModule_AMDataControl" id="Users2_1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="Town1Iterator" id="TownName">
+      <AttrNames>
+        <Item Value="TownName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Town1Iterator" id="CityId">
+      <AttrNames>
+        <Item Value="CityId"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="Town1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="Town1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="Town1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="Town1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModule_AMDataControl"/>
+    <action IterBinding="Town1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <attributeValues IterBinding="Users2_1Iterator" id="UserFname">
+      <AttrNames>
+        <Item Value="UserFname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Users2_1Iterator" id="UserLname">
+      <AttrNames>
+        <Item Value="UserLname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Users2_1Iterator" id="UserNationalty">
+      <AttrNames>
+        <Item Value="UserNationalty"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Users2_1Iterator" id="UserPhone">
+      <AttrNames>
+        <Item Value="UserPhone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Users2_1Iterator" id="Birhdate">
+      <AttrNames>
+        <Item Value="Birhdate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Users2_1Iterator" id="UserEmail">
+      <AttrNames>
+        <Item Value="UserEmail"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Users2_1Iterator" id="UserPassword">
+      <AttrNames>
+        <Item Value="UserPassword"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues StaticList="false" IterBinding="Users2_1Iterator" Uses="LOV_SpecialtiesId" id="SpecialtiesId"/>
+    <listOfValues StaticList="false" IterBinding="Users2_1Iterator" Uses="LOV_TownId" id="TownId"/>
+    <list IterBinding="Users2_1Iterator" StaticList="false" Uses="LOV_EducationLevelId" id="EducationLevelId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="Users2_1Iterator" StaticList="false" Uses="LOV_GenderId" id="GenderId" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="Users2_1Iterator" StaticList="false" Uses="LOV_MilitaryServiceId" id="MilitaryServiceId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+  </bindings>
+</pageDefinition>

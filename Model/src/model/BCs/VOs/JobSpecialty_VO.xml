@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="JobSpecialty_VO"
+  Version="11.1.2.64.36"
+  SelectList="JobSpecialty_EO.JOB_SPECIALTY_ID, 
+       JobSpecialty_EO.JOB_SPECIALTY_NAME, 
+       JobSpecialty_EO.JOB_ID"
+  FromList="JOB_SPECIALTY JobSpecialty_EO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <ViewAccessor
+    Name="Jobs_VO1"
+    ViewObjectName="model.BCs.VOs.Jobs_VO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_JobId"
+    ListVOName="Jobs_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="JobId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="JobId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="JobName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="JobSpecialty_EO"
+    Entity="model.BCs.EOs.JobSpecialty_EO"/>
+  <ViewAttribute
+    Name="JobSpecialtyId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="JobSpecialtyId"
+    EntityUsage="JobSpecialty_EO"
+    AliasName="JOB_SPECIALTY_ID"/>
+  <ViewAttribute
+    Name="JobSpecialtyName"
+    PrecisionRule="true"
+    EntityAttrName="JobSpecialtyName"
+    EntityUsage="JobSpecialty_EO"
+    AliasName="JOB_SPECIALTY_NAME"/>
+  <ViewAttribute
+    Name="JobId"
+    PrecisionRule="true"
+    EntityAttrName="JobId"
+    EntityUsage="JobSpecialty_EO"
+    AliasName="JOB_ID"
+    LOVName="LOV_JobId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewLinkAccessor
+    Name="JobProfile"
+    ViewLink="model.BCs.VLs.JopProfileFk1_VL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="Availablejobs"
+    ViewLink="model.BCs.VLs.AvailablejobsFk5_VL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Certificate_EO"
+  Version="11.1.2.64.36"
+  DBObjectType="table"
+  DBObjectName="CERTIFICATE"
+  AliasName="Certificate_EO"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <Attribute
+    Name="CertificateId"
+    IsNotNull="true"
+    ColumnName="CERTIFICATE_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="CERTIFICATE"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="CertificateName"
+    IsNotNull="true"
+    Precision="40"
+    ColumnName="CERTIFICATE_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CERTIFICATE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="40"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Speclization"
+    Association="model.BCs.ASSs.SpeclizationFk2_ASS"
+    AssociationEnd="model.BCs.ASSs.SpeclizationFk2_ASS.Speclization"
+    AssociationOtherEnd="model.BCs.ASSs.SpeclizationFk2_ASS.Certificate"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="CertificatePk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="CERTIFICATE_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.BCs.EOs.Certificate_EO.CertificateId"/>
+    </AttrArray>
+  </Key>
+</Entity>
